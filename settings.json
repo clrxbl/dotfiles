@@ -12,6 +12,7 @@
         "defaults":
         {
             "colorScheme": "Snazzy",
+            "fontFace": "CaskaydiaCove Nerd Font",
             "commandline": "wsl.exe genie -s"
         },
         "list":
