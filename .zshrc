@@ -1,4 +1,5 @@
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
@@ -7,56 +8,20 @@ export CCACHE_PATH="/usr/bin"  # Tell ccache to only use compilers here
 
 #alias yay="env use_tracers=n use_numa=n use_pds=y use_ns=y _microarchitecture=13 yay"
 
+autoload -Uz compinit
+compinit
+
 source /etc/grc.zsh
+source $HOME/.k3d-zshrc
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
+SPACESHIP_AWS_SHOW=false
+SPACESHIP_GCLOUD_SHOW=false
 eval "$(starship init zsh)"
 
-### grc.zsh
-#!/usr/bin/env zsh
+DOCKER_BUILDKIT=1
+EDITOR=nano
 
-if [ "$TERM" = dumb ] || (( ! $+commands[grc] ))
-then
-  return
-fi
+export PATH="${PATH}:${HOME}/.krew/bin:${HOME}/.yarn/bin:/opt/mvnd/bin"
 
-# Supported commands
-cmds=(
-    whois \
-    wdiff \
-    uptime \
-    traceroute \
-    pv \
-    ps \
-    ping2 \
-    ping \
-    nmap \
-    netstat \
-    mount \
-    lsof \
-    lsmod \
-    lsblk \
-    lsattr \
-    ls \
-    iproute \
-    ipneighbor \
-    ipaddr \
-    ip \
-    fdisk \
-    du \
-    dig \
-    diff \
-    df \
-)
-
-# Set alias for available commands.
-for cmd in $cmds ; do
-  if (( $+commands[$cmd] )) ; then
-    $cmd() {
-      grc --colour=auto ${commands[$0]} "$@"
-    }
-  fi
-done
-
-# Clean up variables
-unset cmds cmd
+alias ls="exa -l --icons -h --git --group-directories-first"
