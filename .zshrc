@@ -19,11 +19,12 @@ eval "$(starship init zsh)"
 export DOCKER_BUILDKIT=1
 export EDITOR=nano
 
-export PATH="${PATH}:${HOME}/.krew/bin:${HOME}/.yarn/bin:/opt/mvnd/bin"
+export PATH="${PATH}:${HOME}/.krew/bin:${HOME}/.yarn/bin:/opt/mvnd/bin:${HOME}/.cargo/bin"
 
-alias ls="exa -l --icons -h --git --group-directories-first"
+alias ls="exa -l --icons -h --git --group-directories-first -F"
 alias cat="bat --paging=never --theme=DarkNeon"
 alias cd="z"
+alias yes=""
 
 export BROWSER=wslview
 

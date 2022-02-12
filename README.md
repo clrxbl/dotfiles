@@ -1,0 +1,1 @@
+I use this in WSL with Arch Linux using Distrod & Windows Terminal.

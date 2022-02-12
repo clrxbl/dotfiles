@@ -1,0 +1,17 @@
+[gcloud]
+disabled = true
+
+[directory]
+truncate_to_repo = false
+
+[kubernetes]
+disabled = false
+
+[nodejs]
+disabled = true
+
+[aws]
+disabled = true
+
+[container]
+disabled = true
