@@ -1,16 +1,15 @@
-source /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PATH="/usr/lib/colorgcc/bin/:$PATH" # As per usual colorgcc installation, leave unchanged (don't add ccache)
-export CCACHE_PATH="/usr/bin"  # Tell ccache to only use compilers here
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 autoload -Uz compinit
 compinit
 
-source /etc/grc.zsh
+plugins=(fzf-tab fast-syntax-highlighting zsh-autosuggestions zsh-history-substring-search zsh-completions)
+
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
+source "$(brew --prefix)/etc/grc.zsh"
 
 SPACESHIP_AWS_SHOW=false
 SPACESHIP_GCLOUD_SHOW=false
@@ -18,19 +17,19 @@ eval "$(starship init zsh)"
 
 export DOCKER_BUILDKIT=1
 export EDITOR=nano
+export DOCKER_HOST=unix://$HOME/.colima/docker.sock
 
-export PATH="${PATH}:${HOME}/.krew/bin:${HOME}/.yarn/bin:/opt/mvnd/bin:${HOME}/.cargo/bin"
+export PATH="$(brew --prefix)/opt/libpq/bin:$(brew --prefix)/opt/coreutils/libexec/gnubin:${HOME}/.krew/bin:${HOME}/.yarn/bin:/opt/mvnd/bin:${HOME}/.cargo/bin:${PATH}"
 
 alias ls="exa -l --icons -h --git --group-directories-first -F"
-alias cat="bat --paging=never --theme=DarkNeon"
+alias cat="bat --style=plain --theme=DarkNeon"
 alias cd="z"
 alias yes=""
-
-export BROWSER=wslview
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/bitcomplete bit
+alias cdtmp="cd $(mktemp -d)"
 
 eval "$(zoxide init zsh)"
+source <(kubectl completion zsh)
 
-source /home/michael/.config/broot/launcher/bash/br
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
