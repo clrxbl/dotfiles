@@ -1,1 +1,3 @@
-I use this in WSL with Arch Linux using Distrod & Windows Terminal.
+# dotfiles
+
+My personal dotfiles. Used on macOS + WezTerm
