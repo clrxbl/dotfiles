@@ -22,7 +22,7 @@ config.color_scheme = 'Snazzy'
 config.colors = { background = '#181818', scrollbar_thumb = '#2e2e2e' }
 config.font = wezterm.font 'BerkeleyMono Nerd Font'
 config.font_size = 12
-config.freetype_load_target = "Mono"
+-- config.freetype_load_target = "Mono"
 
 config.window_background_opacity = 0.7
 config.macos_window_background_blur = 40
