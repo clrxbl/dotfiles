@@ -16,11 +16,13 @@ config.initial_cols = 112
 config.initial_rows = 32
 config.enable_scroll_bar = true
 config.scrollback_lines = 10000
-config.window_padding = { right = 16 }
+config.window_padding = { right = 20 }
 
 config.color_scheme = 'Snazzy'
 config.colors = { background = '#181818', scrollbar_thumb = '#2e2e2e' }
-config.font = wezterm.font 'CaskaydiaCove Nerd Font Mono'
+config.font = wezterm.font 'BerkeleyMono Nerd Font'
+config.font_size = 12
+config.freetype_load_target = "Mono"
 
 config.window_background_opacity = 0.7
 config.macos_window_background_blur = 40
