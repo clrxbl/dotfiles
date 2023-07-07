@@ -14,8 +14,8 @@ SPACESHIP_GCLOUD_SHOW=false
 eval "$(starship init zsh)"
 
 export DOCKER_BUILDKIT=1
-export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock
-export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=$HOME/.colima/default/docker.sock
+#export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock
+#export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=$HOME/.colima/default/docker.sock
 
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
