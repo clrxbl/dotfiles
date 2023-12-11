@@ -27,5 +27,14 @@ config.font_size = 12
 config.window_background_opacity = 0.7
 config.macos_window_background_blur = 40
 
+-- disable copy on select
+config.mouse_bindings = {
+  {
+    event = { Up = { streak = 1, button = "Left" } },
+    mods = "NONE",
+    action = wezterm.action.Nop,
+  },
+}
+
 -- and finally, return the configuration to wezterm
 return config
