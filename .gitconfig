@@ -1,0 +1,39 @@
+[user]
+    email = michael@iptables.sh
+    name = Michael H.
+    signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEcrDxKGvPYmbIaV8vlmAq9lnpJ6sz6fTzw9JD5fXAcG"
+
+[core]
+    editor = nano
+    excludesfile = /Users/michael/.gitignore_global
+
+[pull]
+    rebase = true
+
+[init]
+    defaultBranch = main
+
+[commit]
+    gpgsign = true
+
+[gpg]
+    format = ssh
+
+[push]
+    autoSetupRemote = true
+
+[protocol]
+    version = 2
+
+[diff]
+        tool = difftastic
+        external = difft
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+        difftool = true
