@@ -24,8 +24,8 @@ config.font = wezterm.font 'BerkeleyMono Nerd Font'
 config.font_size = 12
 -- config.freetype_load_target = "Mono"
 
-config.window_background_opacity = 0.7
-config.macos_window_background_blur = 40
+config.window_background_opacity = 0.8
+config.macos_window_background_blur = 60
 
 -- disable copy on select
 config.mouse_bindings = {
