@@ -36,5 +36,7 @@ config.mouse_bindings = {
   },
 }
 
+config.check_for_updates = false
+
 -- and finally, return the configuration to wezterm
 return config
