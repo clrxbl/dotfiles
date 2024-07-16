@@ -1,10 +1,12 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+SAVEHIST=1000000
+
 autoload -Uz compinit
 compinit
 
-plugins=(fzf-tab fast-syntax-highlighting zsh-autosuggestions zsh-history-substring-search zsh-completions)
+plugins=(fzf-tab fast-syntax-highlighting zsh-autosuggestions zsh-completions)
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 source "$(brew --prefix)/etc/grc.zsh"
@@ -23,7 +25,7 @@ export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
 export EDITOR="nano"
 export PATH="$(brew --prefix)/opt/libpq/bin:$(brew --prefix)/opt/coreutils/libexec/gnubin:${HOME}/.krew/bin:${HOME}/.yarn/bin:/opt/mvnd/bin:${HOME}/.cargo/bin:/usr/local/sbin:${PATH}"
 
-alias ls="exa -l --icons -h --git --group-directories-first -F"
+alias ls="eza -l --icons -h --git --git-repos --group-directories-first -F"
 alias cat="bat --style=plain --theme=DarkNeon"
 alias cd="z"
 alias yes=""
@@ -37,7 +39,6 @@ alias gpgreset="gpg-connect-agent killagent /bye; gpg-connect-agent updatestartu
 eval "$(zoxide init zsh)"
 source <(kubectl completion zsh)
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
@@ -49,3 +50,5 @@ export PATH="$PNPM_HOME:$PATH"
 
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+
+eval "$(atuin init zsh)"
