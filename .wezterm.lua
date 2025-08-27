@@ -20,7 +20,7 @@ config.window_padding = { right = 20 }
 
 config.color_scheme = 'Snazzy'
 config.colors = { background = '#181818', scrollbar_thumb = '#2e2e2e' }
-config.font = wezterm.font 'BerkeleyMono Nerd Font'
+config.font = wezterm.font 'BerkeleyMono Nerd Font SemiCondensed'
 config.font_size = 12
 -- config.freetype_load_target = "Mono"
 
