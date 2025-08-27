@@ -11,3 +11,4 @@ window-padding-x = 10
 scrollback-limit = 25000
 keybind = ctrl+alt+shift+5=new_split:right
 keybind = ctrl+alt+shift+'=new_split:down
+keybind = super+enter=unbind
