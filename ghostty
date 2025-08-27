@@ -1,0 +1,13 @@
+background = 181818
+font-family = "BerkeleyMono Nerd Font SemiCondensed"
+font-size = 13
+macos-titlebar-style = "transparent"
+background-opacity = 0.85
+background-blur = true
+theme = snazzy
+window-height = 32
+window-width = 112
+window-padding-x = 10
+scrollback-limit = 25000
+keybind = ctrl+alt+shift+5=new_split:right
+keybind = ctrl+alt+shift+'=new_split:down
