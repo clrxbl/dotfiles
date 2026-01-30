@@ -1,0 +1,5 @@
+zdharma-continuum/fast-syntax-highlighting
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
+Aloxaf/fzf-tab
+mroth/evalcache
