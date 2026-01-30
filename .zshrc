@@ -21,8 +21,6 @@ alias k="kubectl"
 alias kctx="kubectx"
 alias gpgreset="gpg-connect-agent killagent /bye; gpg-connect-agent updatestartuptty /bye; gpg-connect-agent /bye"
 
-autoload -Uz compinit
-compinit
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
