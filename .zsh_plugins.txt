@@ -1,6 +1,6 @@
 mattmc3/ez-compinit
+Aloxaf/fzf-tab
 zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-history-substring-search
-Aloxaf/fzf-tab
 mroth/evalcache
